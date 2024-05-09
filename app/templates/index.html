@@ -1,9 +1,45 @@
 {% extends "base.html" %} {% block content %}
 <div class="p-8 pt-8 pb-4 min-w-full min-h-screen bg-neutral-50">
   <p
-    class="text-center mb-10 text-2xl font-extrabold leading-none tracking-tight text-blue-500 md:text-2xl lg:text-4xl"
+    class="text-center mb-4 text-3xl font-extrabold leading-none tracking-tight text-blue-500 md:text-3xl lg:text-4xl"
   >
-    Hello World!
+    SubSync
   </p>
+  <p class="text-center font-extralight">
+    Ensure perfect timing for your subtitles using this tool
+  </p>
+  <div id="error-container" style="color: red"></div>
+  <div class="mt-8 shadow py-4 px-2 lg:px-6">
+    <form method="post" enctype="multipart/form-data" id="sync-form">
+      <div class="mb-8">
+        <label for="file" class="text-sm mb-2 block"
+          >Upload the file to sync subtitles</label
+        >
+        <input type="file" name="file" id="file" required />
+        <p class="text-xs mt-2 font-extralight">Supported format(s): SRT</p>
+      </div>
+      <div>
+        <label for="offset" class="text-sm block"
+          >How much milliseconds you need to shift time by?</label
+        >
+        <input
+          id="offset"
+          type="number"
+          name="offset"
+          class="mt-2 px-2 py-2 text-xs bg-gray-50 border border-gray-300 text-gray-900 outline-none focus:ring-blue-500 focus:border-blue-500"
+          required
+          placeholder="Enter time in ms"
+        />
+        <p class="text-xs mt-2 font-extralight">
+          Enter a <b>positive</b> value to delay subtitles or a
+          <b>negative</b> value to make them appear earlier.
+        </p>
+        <p class="text-xs mt-1 font-extralight">
+          Note that 1000 milliseconds equals to 1 second.
+        </p>
+      </div>
+      <input class="mt-8 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded cursor-pointer" type="submit" value="SYNC" />
+    </form>
+  </div>
 </div>
 {% endblock %}

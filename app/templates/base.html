@@ -4,13 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     {% if title %}
-    <title>App - {{ title }}</title>
+    <title>SubSync - {{ title }}</title>
     {% else %}
-    <title>App - Home</title>
+    <title>SubSync - Home</title>
     {% endif %}
   </head>
   <body>
     {% block content %}{% endblock %}
   </body>
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="{{url_for('static', filename='script.js')}}"></script>
 </html>

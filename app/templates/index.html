@@ -8,7 +8,6 @@
   <p class="text-center font-extralight">
     Ensure perfect timing for your subtitles using this tool
   </p>
-  <div id="error-container" style="color: red"></div>
   <div class="mt-8 shadow py-4 px-2 lg:px-6">
     <form method="post" enctype="multipart/form-data" id="sync-form">
       <div class="mb-8">
@@ -38,8 +37,26 @@
           Note that 1000 milliseconds equals to 1 second.
         </p>
       </div>
-      <input class="mt-8 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded cursor-pointer" type="submit" value="SYNC" />
+      <input
+        class="mt-8 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded cursor-pointer"
+        type="submit"
+        value="SYNC"
+      />
     </form>
+  </div>
+  <div class="mt-8 flex items-center justify-center">
+    <div
+      id="success-message"
+      class="text-zinc-50 bg-lime-600 text-center text-sm pt-2 pb-2 px-2 rounded w-fit"
+      style="display: none"
+    >
+      Synced file downloaded successfully!
+    </div>
+    <div
+      id="error-container"
+      class="text-zinc-50 bg-red-600 text-center text-sm pt-2 pb-2 px-2 rounded w-fit"
+      style="display: none"
+    ></div>
   </div>
 </div>
 {% endblock %}
